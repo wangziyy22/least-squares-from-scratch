@@ -1,7 +1,11 @@
 import numpy as np
+
 from data import generate_data
 from solver import normal_solver, lstsq_solver
 from visualization import visualize
+
+np.set_printoptions(precision=2)
+np.random.seed(42)
 
 x, A, y = generate_data()
 
@@ -24,7 +28,7 @@ if my_theta is not None:
     print("theta_is_same:", theta_is_same)
     print("sse_is_same:", sse_is_same)
     print("mse_is_same:", mse_is_same)
-else:    
+else:
     print("This normal_solver can not solve it.")
 
-visualize(x=x, y=y,lstsq_theta=lstsq_theta, my_theta=my_theta)
+visualize(x=x, y=y, lstsq_theta=lstsq_theta, my_theta=my_theta)
